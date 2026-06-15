@@ -109,6 +109,9 @@ nav{
   padding:0 2rem;
 }
 .hero-inner{max-width:700px;width:100%;margin-top:70px;}
+.available-badge{display:inline-flex;align-items:center;gap:.45rem;background:rgba(176,120,64,.1);border:1px solid rgba(176,120,64,.3);color:var(--bronze);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.38rem .9rem;border-radius:999px;margin-bottom:1.4rem;font-weight:500;}
+.available-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--bronze);animation:pulse-dot 2s ease-in-out infinite;}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.75)}}
 .hero-name{
   font-family:'Playfair Display',serif;
   font-size:clamp(3.4rem,7.5vw,6rem);
@@ -273,6 +276,13 @@ nav{
 
 /* EDUCATION */
 #education .s-inner{padding-top:0}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem;max-width:860px;margin:0 auto}
+.testi-card{background:#fff;border-radius:18px;padding:2rem 2.2rem;box-shadow:0 2px 20px rgba(100,80,50,0.07);border:1px solid rgba(176,120,64,.12);transition:transform .25s,box-shadow .25s}
+.testi-card:hover{transform:translateY(-3px);box-shadow:0 10px 40px rgba(176,120,64,.15)}
+.testi-quote{font-family:'Playfair Display',serif;font-size:1.05rem;line-height:1.75;color:var(--dark);margin-bottom:1.5rem;font-style:italic}
+.testi-quote::before{content:'\201C';font-size:2.5rem;color:var(--bronze);opacity:.35;line-height:0;vertical-align:-.6rem;margin-right:.2rem}
+.testi-name{font-size:.8rem;font-weight:600;color:var(--dark);letter-spacing:.04em}
+.testi-co{font-size:.75rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:.15rem}
 .edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
 .edu-card{
   background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:1.6rem;
@@ -340,13 +350,14 @@ footer{padding:1.8rem 0;text-align:center;font-size:.68rem;color:var(--muted);le
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
     <a href="#contact">Contact</a>
-    <a href="#" class="nav-dl" download>Download CV</a>
+    <a href="Jehane_Harding_Senior_Producer.pdf" class="nav-dl" download>Download CV</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-inner reveal">
+    <div class="available-badge">&#x25cf; Open to opportunities</div>
     <h1 class="hero-name">Jehane Harding</h1>
   </div>
   <div class="scroll-indicator">
@@ -642,6 +653,23 @@ footer{padding:1.8rem 0;text-align:center;font-size:.68rem;color:var(--muted);le
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="s-inner">
+    <p class="s-label reveal">What others say</p>
+    <h2 class="s-heading reveal">Testimonials</h2>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <p class="testi-quote">"Placeholder — add a quote from a client or director here. Something that speaks to your ability to lead, deliver under pressure, or build trust with stakeholders."</p>
+        <div class="testi-author">
+          <div class="testi-name">Name, Job Title</div>
+          <div class="testi-co">Company</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="s-inner">
@@ -652,7 +680,7 @@ footer{padding:1.8rem 0;text-align:center;font-size:.68rem;color:var(--muted);le
       <div class="contact-btns reveal">
         <a href="mailto:jehaneharding@gmail.com" class="btn-o">Email me</a>
         <a href="https://www.linkedin.com/in/jeh-juganaikloo-5b254a214" target="_blank" class="btn-o">LinkedIn</a>
-        <a href="#" class="btn-o" download>Download CV</a>
+        <a href="Jehane_Harding_Senior_Producer.pdf" class="btn-o" download>Download CV</a>
         <a href="tel:07961005443" class="btn-o">Call me</a>
       </div>
     </div>
