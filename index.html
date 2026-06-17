@@ -323,11 +323,14 @@ footer{padding:1.8rem 0;text-align:center;font-size:.68rem;color:var(--muted);le
   /* Spacing */
   .s-inner{padding:3.5rem 1.4rem}
 
-  /* Nav — horizontal scroll so nothing clips */
-  nav{padding:.85rem 1rem;justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-  nav::-webkit-scrollbar{display:none}
-  .nav-links{gap:.1rem;white-space:nowrap;min-width:max-content}
-  .nav-links a,.nav-dl{padding:.3rem .68rem;font-size:.67rem;letter-spacing:.02em}
+  /* Nav — hide Download CV (it lives in the contact section), keep 5 links centred */
+  nav{padding:.85rem 1rem;justify-content:center}
+  .nav-dl{display:none}
+  .nav-links{gap:.1rem}
+  .nav-links a{padding:.3rem .65rem;font-size:.67rem;letter-spacing:.02em}
+
+  /* Scroll indicator — use inset stretch so it centres regardless of any overflow */
+  .scroll-indicator{left:0;right:0;transform:none;align-items:center}
 
   /* Hero */
   #hero{padding:0 1.4rem}
