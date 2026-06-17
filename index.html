@@ -315,13 +315,54 @@ footer{padding:1.8rem 0;text-align:center;font-size:.68rem;color:var(--muted);le
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
+/* Desktop: hide mobile-only elements */
+.mobile-proj-info{display:none}
+
 /* RESPONSIVE */
 @media(max-width:780px){
-  .about-grid,.skills-grid,.projects-wrap,.edu-grid{grid-template-columns:1fr}
-  .proj-left{position:relative;height:auto;padding:3rem 1.5rem 2rem}
-  .proj-right{padding:3rem 1.5rem}
-  nav{padding:1rem 1.5rem}
-  .nav-name{display:none}
+  /* Spacing */
+  .s-inner{padding:3.5rem 1.4rem}
+
+  /* Nav — horizontal scroll so nothing clips */
+  nav{padding:.85rem 1rem;justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  nav::-webkit-scrollbar{display:none}
+  .nav-links{gap:.1rem;white-space:nowrap;min-width:max-content}
+  .nav-links a,.nav-dl{padding:.3rem .68rem;font-size:.67rem;letter-spacing:.02em}
+
+  /* Hero */
+  #hero{padding:0 1.4rem}
+
+  /* About */
+  .about-grid{grid-template-columns:1fr;gap:2rem}
+  .photo-wrap{max-width:200px;margin:0 auto 1.2rem}
+  .stat-grid{grid-template-columns:1fr}
+
+  /* Skills — stack + kill desktop-hover spotlight on touch */
+  .skills-grid{grid-template-columns:1fr}
+  .skills-grid:hover .skill-group{opacity:1;transform:none}
+  .skills-grid:hover .skill-group:hover{transform:none;box-shadow:none;border-color:var(--bdr)}
+
+  /* Projects — completely rework for mobile */
+  .projects-wrap{display:block}
+  .proj-left{display:none}
+  .proj-right{padding:0 1.4rem 1rem}
+  .proj-block{height:auto;overflow:visible;opacity:1;transform:none;padding:2.5rem 0;gap:1rem}
+  .proj-block+.proj-block{border-top:1px solid var(--bdr);padding-top:2.5rem}
+  .mobile-proj-info{display:block;margin-bottom:1.5rem}
+  .p-meta{gap:1.2rem;flex-wrap:wrap}
+  .proj-video{height:200px}
+  .carousel-slide{height:200px}
+
+  /* Education */
+  .edu-grid{grid-template-columns:1fr}
+
+  /* Contact */
+  .contact-btns{flex-wrap:wrap;gap:.6rem;justify-content:center}
+
+  /* Lightbox */
+  #lightbox-prev{left:.5rem}
+  #lightbox-next{right:.5rem}
+  #lightbox-prev,#lightbox-next{width:40px;height:40px;font-size:1.3rem}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
@@ -559,6 +600,19 @@ footer{padding:1.8rem 0;text-align:center;font-size:.68rem;color:var(--muted);le
     </div>
         <div class="proj-right">
       <div class="proj-block active" data-index="0">
+        <div class="mobile-proj-info">
+          <p class="p-label">Featured Projects</p>
+          <p class="p-counter">01 / 02</p>
+          <h2 class="p-title">Pinheirinho Comporta</h2>
+          <p class="p-sub">Portugal · Luxury Residential Estate</p>
+          <p class="p-desc">A €1.7bn masterplan by VIC Properties spanning 400 hectares on the Alentejo coast, one of Europe's most significant luxury resort developments. The estate encompasses Six Senses-branded residences, bespoke villas, an 18-hole golf course, and direct beach access, with phased delivery through to 2028.</p>
+          <div class="p-meta">
+            <div><div class="mv">£800k</div><div class="mk">Budget managed</div></div>
+            <div><div class="mv">€1.7bn</div><div class="mk">Project value</div></div>
+            <div><div class="mv">400ha</div><div class="mk">Estate size</div></div>
+          </div>
+          <p class="p-body">I led the full CGI and visualisation campaign from pitch through to client handover, managing an £800k production budget, a mixed internal and freelance team and all client relationships with VIC Properties throughout. Deliverables spanned architectural CGIs, animated flythroughs, a 2-minute brand film for their immersion room and 2 Luna interactive applications used directly in their marketing suites.</p>
+        </div>
         <video class="proj-video" controls preload="metadata" poster="assets/comporta/comporta_poster.jpg">
           <source src="assets/comporta/comporta_film.mp4" type="video/mp4">
         </video>
@@ -588,6 +642,19 @@ footer{padding:1.8rem 0;text-align:center;font-size:.68rem;color:var(--muted);le
         </div>
       </div>
       <div class="proj-block" data-index="1">
+        <div class="mobile-proj-info">
+          <p class="p-label">Featured Projects</p>
+          <p class="p-counter">02 / 02</p>
+          <h2 class="p-title">55 India Street, Boston</h2>
+          <p class="p-sub">USA · Luxury Condominium Development</p>
+          <p class="p-desc">A 12-storey, 29-unit boutique condominium tower by Boston Residential Group, the last development site on the Rose Kennedy Greenway. Designed by Hacin, the 76,000 SF glass-facade building reconnects the historic Custom House Tower with Boston's waterfront, with a 4,000 SF fine dining restaurant at street level.</p>
+          <div class="p-meta">
+            <div><div class="mv">$90M</div><div class="mk">Project value</div></div>
+            <div><div class="mv">£200k</div><div class="mk">Budget managed</div></div>
+            <div><div class="mv">29</div><div class="mk">Luxury units</div></div>
+          </div>
+          <p class="p-body">I served as senior production lead on the full CGI and visualisation campaign for Boston Residential Group, managing cross-timezone delivery between London and Boston. The scope covered architectural stills across all unit types and communal spaces, animated sequences, and a Luna interactive application built for on-site sales and investor presentations. The campaign completed on time and on budget, with the client citing the visualisation quality as central to their sales programme.</p>
+        </div>
         <video class="proj-video" controls preload="metadata" poster="assets/india/hq/55_indiastreet_hero_opt02.jpg">
           <source src="assets/india/india_film.mp4" type="video/mp4">
         </video>
